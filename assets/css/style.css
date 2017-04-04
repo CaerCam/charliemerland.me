@@ -1,0 +1,572 @@
+
+/*
+ * Base
+ */
+
+* {
+	margin: 0;
+	padding: 0;
+	outline: 0;
+}
+
+*:focus,
+*:active {
+	border: 0;
+	box-shadow: 0 0 0;
+	outline: none;
+}
+
+body {
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 14px;
+	overflow: hidden;
+}
+
+a {
+	color: #888;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #50cfd1;
+}
+
+/*
+ * jQuery
+ */
+
+.ui-resizable-handle {
+	display: block;
+	font-size: 0.1px;
+	position: absolute;
+	-ms-touch-action: none;
+	touch-action: none;
+}
+
+.ui-resizable-e {
+	cursor: e-resize;
+	height: 100%;
+	right: -5px;
+	top: 0;
+	width: 7px;
+}
+
+.ui-resizable-s {
+	bottom: -5px;
+	cursor: s-resize;
+	height: 7px;
+	left: 0;
+	width: 100%;
+}
+
+.ui-resizable-se {
+	bottom: 1px;
+	cursor: se-resize;
+	height: 16px;
+	right: 1px;
+	width: 16px;
+}
+
+.ui-resizable-se:after {
+	content: '';
+	border: 4px solid transparent;
+	border-bottom-color: #fff;
+	border-right-color: #fff;
+	bottom: 1px;
+	opacity: .2;
+	position: absolute;
+	right: 1px;
+}
+
+/*
+ * General
+ */
+
+.hide {
+	display: none;
+}
+
+.button-text {
+	background: transparent;
+	border: 0;
+	box-shadow: 0 0 0;
+	cursor: default;
+	display: block;
+	height: 32px;
+	line-height: 32px;
+	margin: 0;
+}
+
+.button-icon {
+	background: transparent;
+	border: 0;
+	box-shadow: 0 0 0;
+	cursor: default;
+	display: block;
+	height: 32px;
+	line-height: 32px;
+	margin: 0;
+	padding: 0 8px 0 2px;
+}
+
+.button-icon .icon {
+	color: rgba(0, 0, 0, 0.75);
+	float: left;
+	font-size: 20px;
+	height: 32px;
+	line-height: 32px;
+	width: 32px;
+}
+
+.button-icon .button-label {
+	color: #444;
+	float: left;
+	font-size: 11px;
+	height: 32px;
+	line-height: 34px;
+	margin-left: 4px;
+	text-transform: uppercase;
+}
+
+.button-icon:hover,
+.button-icon:active,
+.button-icon.active {
+	background: rgba(255, 255, 255, 0.25);
+	text-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
+}
+
+.icon-group {
+	position: relative;
+}
+
+.icon-group .button-icon {
+	margin: 2px 0;
+}
+
+.icon-group .button-icon:active {
+	background: rgb(54, 83, 102, 0.25);
+}
+
+.icon-group .button-icon:active .icon,
+.icon-group .button-icon:active .button-label {
+	color: #fff;
+}
+
+.icon-link {
+	background: transparent;
+	border: 0;
+	box-shadow: 0 0 0;
+	cursor: default;
+	display: block;
+	height: 32px;
+	line-height: 32px;
+	margin: 0;
+	padding: 0 8px 0 2px;
+}
+
+.icon-link .icon {
+	color: rgba(0, 0, 0, 0.75);
+	float: left;
+	font-size: 20px;
+	height: 32px;
+	line-height: 32px;
+	width: 32px;
+}
+
+.window {
+	background: #282c2d;
+	box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.25);
+	left: 10%;
+	margin: 15px;
+	position: absolute !important;
+	top: 10%;
+	width: 60%;
+	z-index: 9999;
+}
+
+.window.expanded {
+	bottom: 0 !important;
+	height: auto !important;
+	left: 0 !important;
+	margin: 0 !important;
+	right: 0 !important;
+	top: 0 !important;
+	width: auto !important;
+}
+
+.window.collapsed {
+	display: none;
+}
+
+.window > header {
+	cursor: default;
+	height: 30px;
+	position: relative;
+	text-align: center;
+}
+
+.window > header::before {
+	background: #555;
+	content: '';
+	height: 1px;
+	left: 10px;
+	position: absolute;
+	right: 10px;
+	top: 15px;
+}
+
+.window > header > h2 {
+	background: #282c2d;
+	color: #666;
+	display: inline-block;
+	font-size: 12px;
+	font-weight: 600;
+	height: 30px;
+	line-height: 30px;
+	margin: 0 auto;
+	padding: 0 10px;
+	position: relative;
+	text-transform: uppercase;
+}
+
+.window > header > nav {
+	background: #282c2d;
+	position: absolute;
+	height: 30px;
+	left: 2px;
+	padding: 0 10px;
+}
+
+.window > header > nav .button-icon {
+	background: #282c2d;
+	display: inline-block;
+	height: 30px;
+	line-height: 30px;
+	margin: 0;
+	padding: 0;
+	width: 15px;
+}
+
+.window > header > nav .button-icon .icon {
+	color: #666;
+	font-size: 10px;
+	line-height: 30px;
+	height: 30px;
+	width: 15px;
+}
+
+.window > header > nav .button-icon.collapse:hover .icon,
+.window > header > nav .button-icon.collapse:active .icon {
+	color: #63fd83;
+}
+
+.window > header > nav .button-icon.expand:hover .icon,
+.window > header > nav .button-icon.expand:active .icon {
+	color: #e1c816;
+}
+
+.window > header > nav .button-icon.close:hover .icon,
+.window > header > nav .button-icon.close:active .icon {
+	color: #fa543c;
+}
+
+.window > section {
+	padding: 10px;
+}
+
+/*
+ * Content
+ */
+
+#wrapper {
+	background-color: #626479;
+	background-image: url(../img/bg.jpg);
+	background-position: bottom center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 100%;
+	position: absolute;
+	width: 100%;
+}
+
+/*
+ * Menu
+ */
+
+#menu {
+	background: rgba(255, 255, 255, 0.95);
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+	height: 30px;
+	left: 0;
+	position: absolute;
+	right: 0;
+	text-align: center;
+	top: 0;
+}
+
+/*
+ * Launcher
+ */
+
+#launcher {
+	left: 0;
+	padding: 0 10px;
+	position: absolute;
+}
+
+.menu-launcher {
+	list-style: none;
+}
+
+.menu-launcher .menu-item {
+	float: left;
+	margin: 0 4px;
+}
+
+.menu-launcher .menu-item > .button-text {
+	color: #888;
+	font-size: 10px;
+	font-weight: 600;
+	height: 30px;
+	padding: 0 4px;
+	text-transform: uppercase;
+}
+
+.menu-launcher .menu-item > .button-text:hover,
+.menu-launcher .menu-item.active > .button-text {
+	color: #50cfd1;
+}
+
+#date {
+	color: #888;
+	font-size: 11px;
+	font-weight: 600;
+	position: absolute;
+	right: 12px;
+}
+
+#date .time {
+	margin-left: 8px;
+}
+
+/*
+ * Submenu
+ */
+
+#submenu-apps {
+	left: 6px;
+}
+
+#submenu-places {
+	left: 56px;
+}
+
+.menu-launcher .submenu {
+	background: #fff;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+	display: none;
+	min-width: 240px;
+	max-width: 360px;
+	padding: 5px 15px;
+	position: absolute;
+	text-align: left;
+	top: 42px;
+	width: auto;
+	z-index: 10000;
+}
+
+.menu-launcher .menu-item.active .submenu {
+	display: block;
+}
+
+.menu-launcher .submenu::before,
+.menu-launcher .submenu::after {
+	border: 8px solid transparent;
+	content: '';
+	height: 0;
+	left: 15px;
+	position: absolute;
+	width: 0;
+}
+
+.menu-launcher .submenu::before {
+	border-bottom-color: #ccc;
+	top: -16px;
+}
+
+.menu-launcher .submenu::after {
+	border-bottom-color: #fff;
+	top: -15px;
+}
+
+.menu-launcher .submenu .submenu-menu {
+	list-style: none;
+}
+
+.menu-launcher .submenu .submenu-menu .submenu-item {
+	margin: 12px 0;
+}
+
+.menu-launcher .submenu .submenu-menu .submenu-item.header {
+	position: relative;
+}
+
+.menu-launcher .submenu .submenu-menu .submenu-item.header span {
+	background: #fff;
+	color: #aab;
+	font-size: 12px;
+	font-weight: 600;
+	margin: 15px 20px 10px;
+	padding: 0 10px;
+	text-transform: uppercase;
+}
+
+.menu-launcher .submenu .submenu-menu .submenu-item.header::before {
+	background: #dde;
+	content: '';
+	height: 1px;
+	left: 0;
+	position: absolute;
+	right: 0;
+	top: 8px;
+	z-index: -1;
+}
+
+.menu-launcher .submenu .submenu-menu .submenu-item a:not(:hover) {
+	color: #667;
+}
+
+.menu-launcher .submenu .submenu-menu .submenu-item .icon {
+	color: #bbc;
+	margin-right: 8px;
+}
+
+/*
+ * Desktop
+ */
+
+#desktop {
+	bottom: 32px;
+	left: 0;
+	padding: 10px;
+	position: absolute;
+	right: 0;
+	top: 30px;
+}
+
+#icon-group {
+	bottom: 15%;
+	left: 6%;
+	position: absolute;
+	z-index: 9990;
+}
+
+/*
+ * Windows
+ */
+
+#windows {
+	bottom: 0;
+	left: 0;
+	overflow: hidden;
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+
+/*
+ * Alt-Menu
+ */
+
+#context-menu {
+	background: #fff;
+	border: 1px solid #e5e5e5;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+	display: none;
+	left: 10%;
+	padding: 5px 15px;
+	position: absolute;
+	top: 10%;
+	z-index: 10000;
+}
+
+.context-menu {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.context-menu .menu-item {
+	margin: 12px 0;
+}
+
+.context-menu .menu-item.separator {
+	background: #dde;
+	height: 1px;
+	margin: 8px -15px;
+}
+
+.context-menu .menu-item .icon {
+	color: #bbc;
+	margin-right: 8px;
+}
+
+/*
+ * Taskbar
+ */
+
+#taskbar {
+	background: rgba(255, 255, 255, 0.1);
+	bottom: 0;
+	height: 32px;
+	left: 0;
+	position: absolute;
+	right: 0;
+	top: auto;
+}
+
+.taskbar-launcher {
+	list-style: none;
+}
+
+.taskbar-launcher .menu-item {
+	float: left;
+	margin: 2px 4px;
+}
+
+.taskbar-launcher .menu-item.collapsed {
+	opacity: .6;
+}
+
+.taskbar-launcher .menu-item > .button-text {
+	border: 1px solid #aaa;
+	background: #fff;
+	color: #888;
+	font-size: 10px;
+	font-weight: 600;
+	height: 28px;
+	line-height: 28px;
+	padding: 0 10px;
+	text-transform: uppercase;
+}
+
+.taskbar-launcher .menu-item > .button-text:hover,
+.taskbar-launcher .menu-item.active > .button-text {
+	color: #50cfd1;
+}
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 960px) {
+	.window > header > h2 {
+		position: absolute;
+		right: 2px;
+	}
+}

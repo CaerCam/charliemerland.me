@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+		<title>Charlie Merland − Web Developer</title>
+
+		<link rel="stylesheet" type="text/css" href="assets/css/normalize.min.css">
+		<link rel="stylesheet" type="text/css" href="assets/fonts/caercam/css/caercam.css">
+		<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	</head>
+
+	<body>
+
+		<div id="wrapper">
+
+			<section id="menu">
+				<nav id="launcher">
+					<ul class="menu-launcher">
+						<li class="menu-item">
+							<button type="button" class="button-text" data-target="apps">Apps</button>
+							<section id="submenu-apps" class="submenu">
+								<ul class="submenu-menu">
+									<li class="submenu-item"><span class="icon icon-facebook"></span> <a target="_blank" href="https://www.facebook.com/charlie.merland">Facebook</a></li>
+									<li class="submenu-item"><span class="icon icon-twitter"></span> <a target="_blank" href="https://twitter.com/caercam">Twitter</a></li>
+									<li class="submenu-item"><span class="icon icon-gplus"></span> <a target="_blank" href="https://plus.google.com/u/0/+CharlieMerland">Google+</a></li>
+									<li class="submenu-item"><span class="icon icon-linkedin"></span> <a target="_blank" href="https://www.linkedin.com/in/charliemerland/">LinkedIn</a></li>
+									<li class="submenu-item"><span class="icon icon-github"></span> <a target="_blank" href="https://github.com/caercam">GitHub</a></li>
+								</ul>
+							</section>
+						</li>
+						<li class="menu-item">
+							<button type="button" class="button-text" data-target="places">Places</button>
+							<section id="submenu-places" class="submenu">
+								<ul class="submenu-menu">
+									<li class="submenu-item header"><span>Personal</span></li>
+									<li class="submenu-item"><span class="icon icon-globe"></span> <a target="_blank" href="https://charliemerland.me/">Personal Site</a></li>
+									<li class="submenu-item"><span class="icon icon-wordpress"></span> <a target="_blank" href="https://blog.charliemerland.me/">Personal Blog</a></li>
+									<li class="submenu-item header"><span>Pro</span></li>
+									<li class="submenu-item"><span class="icon icon-globe"></span> <a target="_blank" href="https://caercam.org/">Professional Site</a></li>
+									<li class="submenu-item"><span class="icon icon-wordpress"></span> <a target="_blank" href="https://blog.caercam.org/">Professional Blog</a></li>
+									<li class="submenu-item"><span class="icon icon-globe"></span> <a target="_blank" href="https://talyes.in/">Corporate Site</a></li>
+								</ul>
+							</section>
+						</li>
+					</ul>
+				</nav>
+				<button id="date" class="button-text" type="button"><span class="date"></span><span class="time"></span></button>
+			</section>
+
+			<section id="desktop">
+
+				<section id="context-menu">
+					<ul class="context-menu">
+						<li class="menu-item"><span class="icon icon-user"></span> <a href="#">About Me</a></li>
+						<li class="menu-item"><span class="icon icon-hammer"></span> <a href="#">Legal</a></li>
+						<li class="menu-item separator"></li>
+						<li class="menu-item"><span class="icon icon-hide"></span> <a href="#">Hide this</a></li>
+					</ul>
+				</section>
+
+				<section id="icon-group" class="icon-group"></section>
+
+				<section id="windows" class="window-group ui-widget-content"></section>
+
+			</section>
+
+			<section id="taskbar">
+				<nav id="taskbar-launcher">
+					<ul class="taskbar-launcher"></ul>
+				</nav>
+			</section>
+
+		</div>
+
+		<script type="text/html" id="tmpl-window"><header><nav><button type="button" class="button-icon close" data-action="close"><span class="icon icon-circle-empty"></span></button><button type="button" class="button-icon expand" data-action="expand"><span class="icon icon-circle-empty"></span></button><button type="button" class="button-icon collapse" data-action="collapse"><span class="icon icon-circle-empty"></span></button></nav><h2>{{ data.title }}</h2></header><section></section></script>
+		<script type="text/html" id="tmpl-icon"><button type="button" class="button-icon" data-target="{{ data.id }}"><span class="icon {{ data.icon }}"></span><span class="button-label">{{ data.title }}</span></button></script>
+		<script type="text/html" id="tmpl-task"><button type="button" class="button-text" data-target="{{ data.id }}">{{ data.title }}</button></script>
+
+		<script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/3.2.1/jquery.min.js"></script>
+		<script type="text/javascript" src="https://cdn.jsdelivr.net/jquery.ui/1.11.4/jquery-ui.min.js"></script>
+		<script type="text/javascript" src="https://cdn.jsdelivr.net/underscorejs/1.8.3/underscore-min.js"></script>
+		<script type="text/javascript" src="https://cdn.jsdelivr.net/backbonejs/1.3.3/backbone-min.js"></script>
+		<script type="text/javascript" src="assets/js/caercam.js"></script>
+
+	</body>
+</html>
